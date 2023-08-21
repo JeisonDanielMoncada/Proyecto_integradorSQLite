@@ -1,27 +1,27 @@
 CREATE table Categoria(
 id serial primary key not null,
-nombre varchar (50)
+nombre varchar(25)
 );
 
 
 CREATE table Sucursal(
 id serial primary key not null,
-nombre varchar (50),
-direccion varchar (50)
+nombre varchar(30),
+direccion varchar(30)
 );
 
 CREATE table Cliente(
 id serial primary key not null,
-nombre varchar (50),
-telefono varchar (50)
+nombre varchar(30),
+telefono varchar(30)
 );
 
 CREATE table Producto(
 id serial primary key not null,
-nombre varchar (50),
-marca varchar (50),
+nombre varchar(30),
+marca varchar(30),
 categoria_id integer,
-precio_unitario decimal(20,2),
+precio_unitario decimal(20,2)
 );
 
 CREATE table Stock(
@@ -36,9 +36,8 @@ CREATE table Orden(
 id serial primary key not null,
 cliente_id integer,
 sucursal_id integer,
-fecha timestamp,
-total decimal(20,2),
-
+fecha date,
+total decimal(20,2)
 );
 
 CREATE table Item(
@@ -46,5 +45,5 @@ id serial primary key not null,
 orden_id integer,
 producto_id integer,
 cantidad integer,
-monto_venta decimal(20,2),
+monto_venta decimal(20,2)
 );

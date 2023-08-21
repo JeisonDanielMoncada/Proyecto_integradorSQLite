@@ -1,0 +1,11 @@
+select max(precio_unitario)as precio_max,min(precio_unitario) as precio_min,avg(precio_unitario)as precio_prom
+from producto;
+
+select sucursal_id ,sum(cantidad)as cantidad_total
+from stock 
+group by sucursal_id;
+
+select cliente_id ,sum(total)as ventas_totales
+from orden
+group by cliente_id;
+
