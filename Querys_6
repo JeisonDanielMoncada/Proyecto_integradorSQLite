@@ -1,0 +1,21 @@
+SELECT c.nombre , p.categoria_id , AVG(p.precio_unitario) as promedio_precio
+FROM Producto p
+join Categoria c on c.id = p.categoria_id
+group by categoria_id ;
+
+SELECT p.categoria_id, SUM(s.cantidad) as cantidad_categoria 
+FROM Producto p
+join Stock s  on p.id = s.producto_id
+GROUP by p.categoria_id ;
+
+SELECT s.id , SUM(o.total) as ventas_totales 
+FROM Sucursal s 
+join Orden o on s.id = o.sucursal_id 
+GROUP by o.sucursal_id;
+
+SELECT c.nombre  , SUM(o.total) as compras_totales 
+FROM  Cliente c  
+join Orden o on c.id  = o.cliente_id  
+GROUP by c.nombre 
+ORDER by compras_totales DESC
+LIMIT 1;

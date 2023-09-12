@@ -1,0 +1,7 @@
+ALTER TABLE producto ADD FOREIGN KEY (categoria_id) REFERENCES categoria(Id);
+ALTER TABLE stock ADD FOREIGN KEY (sucursal_id) REFERENCES sucursal(Id);
+ALTER TABLE stock ADD FOREIGN KEY (producto_id) REFERENCES producto(Id);
+ALTER TABLE orden ADD FOREIGN KEY (sucursal_id) REFERENCES sucursal(Id);
+ALTER TABLE orden ADD FOREIGN KEY (cliente_id) REFERENCES cliente(Id);
+ALTER TABLE item ADD FOREIGN KEY (orden_id) REFERENCES orden(Id);
+ALTER TABLE item ADD FOREIGN KEY (producto_id)) REFERENCES producto(Id);
